@@ -13,11 +13,11 @@ button_no: KeyboardButton = KeyboardButton(LEXICON_RU['no_button'])
 yes_no_kb.add(button_yes, button_no)
 
 # Создаем игровую клавиатуру с кнопками "Камень 🗿", "Ножницы ✂" и "Бумага 📜"
-game_kb: ReplyKeyboardMarkup = ReplyKeyboardMrkup(resize_keyboard=True)
+game_kb: ReplyKeyboardMarkup = ReplyKeyboardMarkup(resize_keyboard=True)
 
-button_1: KeybordButton = KeybordButton(LEXICON_RU['rock'])
-button_2: KeybordButton = KeybordButton(LEXICON_RU['scissors'])
-button_3: KeybordButton = KeybordButton(LEXICON_RU['paper'])
+button_1: KeyboardButton = KeyboardButton(LEXICON_RU['rock'])
+button_2: KeyboardButton = KeyboardButton(LEXICON_RU['scissors'])
+button_3: KeyboardButton = KeyboardButton(LEXICON_RU['paper'])
 
 # Располагаем кнопки на клавиатуре одну под другой в 3 ряда
 game_kb.add(button_1).add(button_2).add(button_3)
