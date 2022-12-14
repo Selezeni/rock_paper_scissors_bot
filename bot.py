@@ -33,11 +33,11 @@ async def main():
     config: Config = load_config()
 
     # Инициализируем бот и диспетчер
-    bot: Bot = Bot(token=config.tg_bot.token, parse_mod='HTML')
+    bot: Bot = Bot(token=config.tg_bot.token, parse_mode='HTML')
     dp: Dispatcher = Dispatcher(bot)
 
     # Регистрируем все хэндлеры
-    register_all_handlers()
+    register_all_handlers(dp)
 
     # Запускаем polling
     try:

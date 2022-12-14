@@ -38,7 +38,7 @@ async def process_game_button(message: Message):
 # Функция для регистрации хэндлеров в диспетчере. Вызывается в исполняемом файле bot.py
 def register_user_handlers(dp: Dispatcher):
     dp.register_message_handler(process_start_command, commands='start')
-    dp.register_mesage_handler(process_help_command, commands='help')
+    dp.register_message_handler(process_help_command, commands='help')
     dp.register_message_handler(process_yes_answer, text=LEXICON_RU['yes_button'])
     dp.register_message_handler(process_no_answer, text=LEXICON_RU['no_button'])
     dp.register_message_handler(process_game_button, Text(equals=[LEXICON_RU['rock'],
