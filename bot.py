@@ -6,6 +6,7 @@ from aiogram import Bot, Dispatcher, types
 from config_data.config import Config, load_config
 from handlers.user_handlers import register_user_handlers
 from handlers.other_handlers import register_other_handlers
+from keyboards.menu_button import set_main_menu
 
 
 # Инициализируем логгер
@@ -37,14 +38,8 @@ async def main():
     dp: Dispatcher = Dispatcher(bot)
 
 
-    # Создаём Меню ***в разработке
-    # async def set_main_menu(dp: Dispatcher):
-    #     # Создаем список с командами для кнопки menu
-    #     main_menu_commands = [
-    #         types.BotCommand(command='/start', description='Старт бота'),
-    #         types.BotCommand(command='/help', description='Помощь, Правила игры')
-    #     ]
-    #     await dp.bot.set_my_commands(main_menu_commands)
+    # Настраиваем кнопку Menu
+    await set_main_menu(dp)
 
 
     # Регистрируем все хэндлеры и меню
