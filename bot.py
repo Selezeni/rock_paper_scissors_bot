@@ -1,7 +1,7 @@
 import asyncio
 import logging
 
-from aiogram import Bot, Dispatcher
+from aiogram import Bot, Dispatcher, types
 
 from config_data.config import Config, load_config
 from handlers.user_handlers import register_user_handlers
@@ -36,8 +36,20 @@ async def main():
     bot: Bot = Bot(token=config.tg_bot.token, parse_mode='HTML')
     dp: Dispatcher = Dispatcher(bot)
 
-    # Регистрируем все хэндлеры
+
+    # Создаём Меню ***в разработке
+    # async def set_main_menu(dp: Dispatcher):
+    #     # Создаем список с командами для кнопки menu
+    #     main_menu_commands = [
+    #         types.BotCommand(command='/start', description='Старт бота'),
+    #         types.BotCommand(command='/help', description='Помощь, Правила игры')
+    #     ]
+    #     await dp.bot.set_my_commands(main_menu_commands)
+
+
+    # Регистрируем все хэндлеры и меню
     register_all_handlers(dp)
+
 
     # Запускаем polling
     try:
